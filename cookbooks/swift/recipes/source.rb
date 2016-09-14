@@ -148,3 +148,9 @@ execute "build hummingbird" do
   command "cd #{node['gopath']}/src/github.com/openstack/swift/go; " \
     "make get all"
 end
+
+# "install" hummingbird
+link '/usr/local/bin/hummingbird' do
+  to "#{node['gopath']}/bin/hummingbird"
+end
+
